@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { BookNowComponent } from './components/book-now/book-now.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'reviews', component: ReviewsComponent },
+  { path: 'book-now', component: BookNowComponent },
+];
 
 @NgModule({
   declarations: [
@@ -16,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     ReviewsComponent,
     NavbarComponent,
+    BookNowComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

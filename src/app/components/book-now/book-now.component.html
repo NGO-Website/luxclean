@@ -1,0 +1,49 @@
+<!-- booking-form.component.html -->
+
+<div class="booking-form-container">
+    <h2>Book Now</h2>
+  
+    <form (ngSubmit)="onSubmit()" #bookNowForm="ngForm">
+      <!-- Name Input -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+      </div>
+  
+      <!-- Contact Details Input -->
+      <div class="form-group">
+        <label for="contactDetails">Contact Details</label>
+        <input type="text" id="contactDetails" name="contactDetails" [(ngModel)]="formData.contactDetails" required>
+      </div>
+  
+      <!-- Service Type (Multiple Choice Question) -->
+      <div class="form-group">
+        <label>Service Type</label>
+        <div *ngFor="let option of serviceTypeOptions">
+          <label>
+            <input type="checkbox" name="serviceType" [checked]="formData.serviceType.includes(option)" [value]="option" (change)="toggleServiceType(option)">
+          {{ option }}
+          </label>
+        </div>
+      </div>
+  
+      <!-- Address Input -->
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" [(ngModel)]="formData.address" required></textarea>
+      </div>
+  
+      <!-- Billing Method (Multiple Choice Question) -->
+      <div class="form-group">
+        <label>Billing Method</label>
+        <div *ngFor="let option of billingMethodOptions">
+          <label>
+            <input type="radio" name="billingMethod" [checked]="formData.billingMethod === option" [value]="option" (change)="updateBillingMethod(option)" required>
+            {{ option }}
+          </label>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!bookNowForm.valid">Submit</button>
+    </form>
+  </div>
+  

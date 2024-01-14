@@ -11,5 +11,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  welcomeMessage = 'Welcome to Lex Clean Service!';
 }
