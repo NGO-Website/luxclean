@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  bookNow() {
+    // Add logic for the "Book Now" button click event
+    console.log('Book Now clicked!');
+  }
 }
