@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  welcomeMessage = 'Welcome to Lex Clean Service!';
 
   bookNow() {
-    // Add logic for the "Book Now" button click event
+    this.router.navigate(['/book-now']);
     console.log('Book Now clicked!');
   }
 }
