@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ReviewsComponent implements OnInit {
   angForm: FormGroup;
+
+  reviews: any[] = [];
+
   constructor(private fb: FormBuilder, private route: Router) {
     this.angForm = this.fb.group({
       name: ['', Validators.required],
