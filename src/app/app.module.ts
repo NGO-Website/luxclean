@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FooterComponent } from './components/footer/footer.component';
 import { BookNowComponent } from './components/book-now/book-now.component';
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
     HomeComponent,
     ReviewsComponent,
     NavbarComponent,
+    FooterComponent,
     BookNowComponent,
   ],
   imports: [
@@ -33,6 +36,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],

@@ -1,9 +1,10 @@
-<div class="container extra_container">
+<div class="card">
   <div class="row">
     <h3 class="md-col-12">Add Reviews</h3>
   </div>
 
   <form [formGroup]="angForm" (ngSubmit)="postData(angForm)" autocomplete="off">
+    <!-- Existing add reviews form code -->
     <div class="row">
       <div class="col-md-6">Service Name</div>
       <div class="col-md-6">
@@ -46,4 +47,21 @@
       </div>
     </div>
   </form>
+
+  <!-- Horizontal Line -->
+  <div class="horizontal-line"></div>
+
+  <!-- List of past reviews below: -->
+  <!-- List of past reviews below -->
+  <div *ngIf="reviews.length > 0">
+    <h4>Past Reviews</h4>
+    <ul>
+      <li *ngFor="let review of reviews">
+        <strong>Service:</strong> {{ review.service }} |
+        <strong>Price:</strong> {{ review.price | currency: 'USD' }} |
+        <strong>Description:</strong> {{ review.description }}
+      </li>
+    </ul>
+  </div>
+
 </div>

@@ -1,7 +1,11 @@
-<!-- home.component.html -->
-
-<div class="welcome-container">
-    <h2>{{ welcomeMessage }}</h2>
-    <!-- Other content goes here -->
-  </div>
+<div class="card">
+    <img src="assets/home-images/home_book_now_card_3.jpg" alt="Book Now" class="card-image">
+    <div class="card-content">
+        <h3 class="card-title">BOOK NOW</h3>
+        <p class="card-description">
+            Book our services in just 60 seconds
+        </p>
+      <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+    </div>
+</div>
   
