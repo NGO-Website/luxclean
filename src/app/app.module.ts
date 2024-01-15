@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     ReviewsComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
