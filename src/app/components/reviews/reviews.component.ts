@@ -15,12 +15,17 @@ export class ReviewsComponent implements OnInit {
   constructor(private fb: FormBuilder, private route: Router) {
     this.angForm = this.fb.group({
       name: ['', Validators.required],
+      service: ['', Validators.required],
       price: ['', Validators.required],
       description: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.reviews = [
+      {name: "Shubhranshu", service: "Apartment Cleaning Service", price: "50", description: "Good Service!!"}
+    ];
+  }
 
   postData(forms: any) {
     console.log(this.angForm.value);
