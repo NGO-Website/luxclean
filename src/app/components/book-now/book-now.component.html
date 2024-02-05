@@ -1,49 +1,247 @@
 <!-- booking-form.component.html -->
 
-<div class="booking-form-container">
-    <h2>Book Now</h2>
-  
-    <form (ngSubmit)="onSubmit()" #bookNowForm="ngForm">
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #bookNowForm="ngForm" class="form-container">
+      <h2>Complete your Booking.</h2>
+      <h6>Great! Few details and we can complete your booking. 
+          Please give us a call 818-208-1698 if you have any questions during the process.</h6>
+    <hr>
       <!-- Name Input -->
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+        <label for="name">STEP 1: CHOOSE YOUR SERVICE</label>
+            Tell us about your home.
+            Please call us for a custom quote if your house is 5 bdrm or more and you need a deep cleaning or move out cleaning.
+            <select id="name" name="name" style="width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;">
+              <option value="none" selected>service1</option>
+              <option value="male">service2</option>
+              <option value="female">service3</option>
+              <option value="other">service4</option>
+            </select>
       </div>
   
       <!-- Contact Details Input -->
-      <div class="form-group">
-        <label for="contactDetails">Contact Details</label>
-        <input type="text" id="contactDetails" name="contactDetails" [(ngModel)]="formData.contactDetails" required>
-      </div>
+
   
       <!-- Service Type (Multiple Choice Question) -->
-      <div class="form-group">
-        <label>Service Type</label>
-        <div *ngFor="let option of serviceTypeOptions">
-          <label>
-            <input type="checkbox" name="serviceType" [checked]="formData.serviceType.includes(option)" [value]="option" (change)="toggleServiceType(option)">
-          {{ option }}
-          </label>
-        </div>
-      </div>
   
       <!-- Address Input -->
+      
+        <label>STEP 2: WHO YOU ARE</label>
+        <p>This information will be used to contact you about your service.</p>
       <div class="form-group">
-        <label for="address">Address</label>
-        <textarea id="address" name="address" [(ngModel)]="formData.address" required></textarea>
-      </div>
-  
-      <!-- Billing Method (Multiple Choice Question) -->
+        <div style="display: flex; width: 100%; height:80%">
+          <div style="width: 48%;  margin-right: 15px;font:100 16px proxima,Arial,Helvetica,sans-serif">
+            <input type="text" id="first_name" name="first_name" [(ngModel)]="formData.first_name" placeholder="First Name" required>
+          </div>
+          <div style="width: 48%; font:100 16px proxima,Arial,Helvetica,sans-serif">
+            <input type="text" id="last_name" name="last_name" [(ngModel)]="formData.last_name"  placeholder="Last Name" required>
+          </div>
+        </div>
+        <div style="display: flex; width: 100%; height:80%; margin-top:15px">
+          <div style="width: 48%;  margin-right: 15px;font:100 16px proxima,Arial,Helvetica,sans-serif">
+            <input type="text" id="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required>
+          </div>
+          <div style="width: 48%; font:100 16px proxima,Arial,Helvetica,sans-serif">
+            <input type="text" id="mobile_number" name="mobile_number" [(ngModel)]="formData.mobile_number" placeholder="Mobile Number**" required>
+          </div>
+          </div>
+        
+        
+    </div>
+
+      <h5>STEP 3: YOUR HOME</h5>
+        <p>Where would you like us to clean?</p>
       <div class="form-group">
-        <label>Billing Method</label>
-        <div *ngFor="let option of billingMethodOptions">
-          <label>
-            <input type="radio" name="billingMethod" [checked]="formData.billingMethod === option" [value]="option" (change)="updateBillingMethod(option)" required>
-            {{ option }}
-          </label>
+        <div style="display: flex; width: 100%;">
+
+          <!-- Address takes 100% of the line -->
+          <div style="width: 100%;">
+            <input type="text" id="address" name="address" [(ngModel)]="formData.address" placeholder="Address" required>
+          </div>
+        </div>
+        <div style="display: flex; width: 100%; margin-top: 15px">
+          <div style="width: 40%; margin-right: 10px;">
+            <input type="text" id="apt_suite" name="apt_suite" placeholder="Apt/Suite #" [(ngModel)]="formData.apt_suite">
+          </div>
+          <div style="width: 40%; margin-right: 10px;">
+            <input type="text" id="city" name="city" placeholder="City" [(ngModel)]="formData.city" required>
+          </div>
+          <div style="width: 20%;">
+            <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code" [(ngModel)]="formData.zip_code" required>
+          </div>
+        </div>
+        </div>
+
+        
+          <!-- Apt/Suite #, City, and Zip Code in the same line with a ratio of 4:4:2 -->
+          
+        
+          
+        
+
+      <H5>When would you like us to come?</H5>
+      <div class="form-group">
+        <div class="row" style="margin-right: 0;">
+          <div class="col-md-6 mb-3">
+            <label for="selected_date">Choose a Date:</label>
+            <input type="date" id="selected_date" name="selected_date" [(ngModel)]="formData.selected_date" class="form-control" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="selected_time">Choose a Time:</label>
+            <select id="selected_time" name="selected_time" [(ngModel)]="formData.selected_time" class="form-control" required>
+              <option *ngFor="let hour of generateHours()" [value]="hour">{{ hour }}</option>
+            </select>
+          </div>
         </div>
       </div>
+  
+    <div class="form-group">
+      <label>How often?</label>
+      <P>It's all about matching you with the perfect clean for your home. Scheduling is flexible. Cancel or reschedule anytime before 5 pm the day before service.      </P>
+      <div class="button-group">
+          <button type="button" class="frequency-button"
+                  [class.selected]="formData.cleaning_frequency === 'every_3_weeks'"
+                  (click)="selectFrequency('every_3_weeks')">Every 3 Weeks</button>
+  
+          <button type="button" class="frequency-button"
+                  [class.selected]="formData.cleaning_frequency === 'one_time'"
+                  (click)="selectFrequency('one_time')">One Time</button>
+  
+          <button type="button" class="frequency-button"
+                  [class.selected]="formData.cleaning_frequency === 'monthly'"
+                  (click)="selectFrequency('monthly')">Monthly</button>
+  
+          <button type="button" class="frequency-button"
+                  [class.selected]="formData.cleaning_frequency === 'biweekly'"
+                  (click)="selectFrequency('biweekly')">Biweekly</button>
+
+                  <button type="button" class="frequency-button"
+                  [class.selected]="formData.cleaning_frequency === 'weekly'"
+                  (click)="selectFrequency('weekly')">Weekly</button>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="additional_notes">Additional Information:</label>
+    <textarea id="additional_notes" name="additional_notes" [(ngModel)]="formData.additional_notes"></textarea>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="parking_option">Please choose parking option:</label>
+      <select id="parking_option" name="parking_option" [(ngModel)]="formData.parking_option" class="form-select">
+        <option value="street_parking">Street Parking</option>
+        <option value="driveway">Driveway</option>
+        <option value="parking_pass">Parking Pass</option>
+        <option value="guest_parking">Guest Parking</option>
+        <option value="parking_lot">Parking Lot</option>
+      </select>
+    </div>
+</div>
+    
       <button type="submit" [disabled]="!bookNowForm.valid">Submit</button>
     </form>
+
+
+
+        <div class="card-container">
+          <div class="card" >
+            <i class="fa-regular fa-clock" style="margin-top: 20px"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              text-align: center;
+              padding: 0px 20px;">
+            SAVES YOU TIME</h4>
+              <p style="box-sizing: border-box; text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Our service helps you live smarter, giving you time to focus on what's most important.</p>
+
+
+              <i class="fa-solid fa-shield-heart"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              text-align: center;
+              padding: 0px 20px;">SAFETY FIRST</h4>
+              <p style="box-sizing: border-box;  text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">We rigorously vet all professional cleaners, who undergo identity checks as well as in-person interviews.</p>
+              
+              
+              <i class="fa-solid fa-thumbs-up"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              text-align: center;
+              padding: 0px 20px;">ONLY THE BEST QUALITY</h4>
+              <p style="box-sizing: border-box; text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Skilled professionals go above and beyond on every job. Cleaners are rated and reviewed after each task.</p>
+              
+              
+              
+              
+              
+              
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              text-align: center;
+              padding: 0px 20px;">EASY TO GET HELP</h4>
+              <p style="box-sizing: border-box; text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Select your ZIP code, number of bedrooms and square footage, date and relax while we take care of your home.</p>
+              
+              
+              
+              <i class="fa-regular fa-message"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              text-align: center;
+              padding: 0px 20px;">SEAMLESS COMMUNICATION</h4>
+              <p style="box-sizing: border-box; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Online communication makes it easy for you to stay in touch with our support team.</p>
+              
+              
+              
+              
+              <i class="fa-brands fa-cc-visa"></i>
+              <h4 style="box-sizing: border-box;
+              font-family: inherit;
+              font-weight: bold;
+              line-height: 1.1;
+              text-align: center;
+              color: rgb(55, 62, 74);
+              font-size: 16px;
+              margin-top: 8.5px;
+              margin-bottom: 8.5px;
+              padding: 0px 20px;">CASH FREE PAYMENT</h4>
+              <p style="box-sizing: border-box; text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Pay securely online only when the cleaning is complete.</p>
+          </div>
+      </div>
   </div>
   

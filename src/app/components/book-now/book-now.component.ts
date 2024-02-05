@@ -42,8 +42,21 @@ export class BookNowComponent implements OnInit {
       this.formData.serviceType.splice(index, 1);
     }
   }
+
+  generateHours(){
+    const hours: string[] = [];
+    for (let i = 8; i <= 19; i++) {
+        const time = i < 12 ? `${i}:00 AM` : `${i - 12}:00 PM`;
+        hours.push(time);
+    }
+    return hours;
+  }
   
   updateBillingMethod(option: string) {
     this.formData.billingMethod = option;
+  }
+
+  selectFrequency(frequency: string): void {
+    this.formData.cleaning_frequency = frequency;
   }
 }

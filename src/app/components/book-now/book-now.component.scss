@@ -51,3 +51,48 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+
+.button-group {
+  display: flex;
+}
+
+.frequency-button {
+  background-color: white;
+  border: 1px solid #999999;
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  margin-right: 10px;
+}
+
+.frequency-button.selected {
+  background-color: orangered;
+  color: #ffffff;
+}
+
+
+.container {
+  display: flex;
+}
+
+#selected_time::after {
+  content: '\25BC'; /* Unicode character for downward arrow */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75em;
+  pointer-events: none; /* Ensure the pseudo-element doesn't interfere with user interactions */
+}
+
+.form-container {
+  width: 50%; /* Adjust the width as needed */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.card-container {
+  width: 50%; /* Adjust the width as needed */
+  padding: 20px; /* Add padding for spacing */
+  border-left: 1px solid #ccc; /* Add a border between form and cards */
+}
