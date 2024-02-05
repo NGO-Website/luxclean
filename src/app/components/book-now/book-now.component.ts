@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class BookNowComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    
+  }
 
   formData: any = {
     name: '',
@@ -23,6 +25,7 @@ export class BookNowComponent implements OnInit {
   billingMethodOptions = ['Credit Card', 'PayPal', 'Bank Transfer'];
 
   ngOnInit(): void {
+   
   }
 
   onSubmit() {

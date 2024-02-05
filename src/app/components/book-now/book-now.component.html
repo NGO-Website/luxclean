@@ -130,6 +130,18 @@
                   (click)="selectFrequency('weekly')">Weekly</button>
       </div>
   </div>
+  <div class="form-group">
+    <label for="cleaningOptions">Select Cleaning Options:</label>
+  <select id="cleaningOptions" name="cleaningOptions" ng-model="selectedOptions">
+    <option value="laundry">Laundry</option>
+    <option value="fridgeInteriorClean">Fridge Interior Clean</option>
+    <option value="windowSillCleaning">Window Sill Cleaning</option>
+    <option value="pantryOrganization">Pantry Organization</option>
+    <option value="closetOrganization">Closet Organization</option>
+    <option value="ventsCleaning">Vents Cleaning</option>
+  </select>
+  </div>
+  
 
   <div class="form-group">
     <label for="additional_notes">Additional Information:</label>
@@ -156,7 +168,7 @@
 
         <div class="card-container">
           <div class="card" >
-            <i class="fa-regular fa-clock" style="margin-top: 20px"></i>
+            <i class="fa-regular fa-clock" style="margin-top: 20px; text-align: center;"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
@@ -171,7 +183,7 @@
               <p style="box-sizing: border-box; text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">Our service helps you live smarter, giving you time to focus on what's most important.</p>
 
 
-              <i class="fa-solid fa-shield-heart"></i>
+              <i class="fa-solid fa-shield-heart" style="text-align: center"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
@@ -185,7 +197,7 @@
               <p style="box-sizing: border-box;  text-align: center; margin: 0px 0px 8.5px; padding: 0px 20px 40px; font-weight: lighter;">We rigorously vet all professional cleaners, who undergo identity checks as well as in-person interviews.</p>
               
               
-              <i class="fa-solid fa-thumbs-up"></i>
+              <i class="fa-solid fa-thumbs-up" style="text-align: center"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
@@ -203,7 +215,7 @@
               
               
               
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <i class="fa-solid fa-wand-magic-sparkles" style="text-align: center"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
@@ -218,7 +230,7 @@
               
               
               
-              <i class="fa-regular fa-message"></i>
+              <i class="fa-regular fa-message" style="text-align: center"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
@@ -234,7 +246,7 @@
               
               
               
-              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-visa" style="text-align: center"></i>
               <h4 style="box-sizing: border-box;
               font-family: inherit;
               font-weight: bold;
