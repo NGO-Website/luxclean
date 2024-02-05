@@ -11,7 +11,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   openBookingForm() {
     this.router.navigate(['/book-now']);
+  }
+
+  viewServiceandPrices(){
+    this.router.navigate(['/service'])
   }
 }

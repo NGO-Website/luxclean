@@ -13,6 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './components/footer/footer.component';
 import { BookNowComponent } from './components/book-now/book-now.component';
+import { ServiceComponent } from './components/service/service.component';
+import { StandardComponent } from './components/service/standard/standard.component';
+import { SignatureComponent } from './components/service/signature/signature.component';
+import { PlatinumComponent } from './components/service/platinum/platinum.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +32,10 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     BookNowComponent,
+    ServiceComponent,
+    StandardComponent,
+    SignatureComponent,
+    PlatinumComponent,
   ],
   imports: [
     BrowserModule,

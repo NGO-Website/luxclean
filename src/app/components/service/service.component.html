@@ -1,0 +1,231 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="areaFilter">Filter by Area:</label>
+          </div>
+          <select class="custom-select" id="areaFilter" (change)="applyAreaFilter($event)">
+            <option value="all">All</option>
+            <option value="2500">Up to 2500 sq ft</option>
+            <option value="3500">Up to 3500 sq ft</option>
+            <option value="5000">Up to 5000 sq ft</option>
+            <option value="exclusive">Exclusive Services</option>
+          </select>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="page-container" *ngIf="selectedArea === '2500' || selectedArea === 'all'">
+    <h1 class="page-header">For area upto 2500 sq ft</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/home-images/standard.jpeg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Standard cleaning package</h3>
+                <p class="card-description">
+                    $147 
+                </p>
+                <div class="button-container">
+                    <button class="btn"  routerLink="/standard" (click)="standardinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/signature_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Signature Suite Package</h3>
+                <p class="card-description">
+                    $247
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/signature" (click)="signatureinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/platinum_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Platinum Prestige package</h3>
+                <p class="card-description">
+                    $347
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/platinum" (click)="platinuminfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+<div class="page-container" *ngIf="selectedArea === '3500' || selectedArea === 'all'">
+    <h1 class="page-header">For area upto 3500 sq ft</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/home-images/standard.jpeg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Standard cleaning package</h3>
+                <p class="card-description">
+                    $247 
+                </p>
+                <div class="button-container">
+                    <button class="btn"  routerLink="/standard" (click)="standardinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/signature_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Signature Suite Package</h3>
+                <p class="card-description">
+                    $347
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/signature" (click)="signatureinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/platinum_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Platinum Prestige package</h3>
+                <p class="card-description">
+                    $447
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/platinum" (click)="platinuminfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+<div class="page-container" *ngIf="selectedArea === '5000' || selectedArea === 'all'">
+    <h1 class="page-header">For area upto 5000 sq ft</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/home-images/standard.jpeg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Standard cleaning package</h3>
+                <p class="card-description">
+                    $547
+                </p>
+                <div class="button-container">
+                    <button class="btn"  routerLink="/standard" (click)="standardinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/signature_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Signature Suite Package</h3>
+                <p class="card-description">
+                    $747
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/signature" (click)="signatureinfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/platinum_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Platinum Prestige package</h3>
+                <p class="card-description">
+                    $947
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/platinum" (click)="platinuminfo()">Info</button>
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+<div class="page-container">
+    <h1 class="page-header">Exclusive services</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/home-images/laundry.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Laundry</h3>
+                <p class="card-description">
+                    $34
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/fridge_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Fridge Interior Clean</h3>
+                <p class="card-description">
+                    $27
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/window_sill.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Window Sill Cleaning</h3>
+                <p class="card-description">
+                    $27
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="assets/home-images/pantry_organization.jpeg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Pantry Organization</h3>
+                <p class="card-description">
+                    $57
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/closet_organization.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Closet Organization</h3>
+                <p class="card-description">
+                    $111 (Kids' Closets and Master Bedroom Closet)
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <img src="assets/home-images/vents_cleaning.jpg" alt="Book Now" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Vents Cleaned</h3>
+                <p class="card-description">
+                    $37
+                </p>
+                <div class="button-container">
+                    <button class="btn" routerLink="/book-now" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
