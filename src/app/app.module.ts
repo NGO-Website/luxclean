@@ -17,6 +17,8 @@ import { ServiceComponent } from './components/service/service.component';
 import { StandardComponent } from './components/service/standard/standard.component';
 import { SignatureComponent } from './components/service/signature/signature.component';
 import { PlatinumComponent } from './components/service/platinum/platinum.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +38,7 @@ const routes: Routes = [
     StandardComponent,
     SignatureComponent,
     PlatinumComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],

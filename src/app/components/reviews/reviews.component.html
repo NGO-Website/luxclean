@@ -1,69 +1,14 @@
 <div class="card">
-  <div class = "add-reviews">
-    <div class="row">
-      <h3 class="md-col-12">Add Reviews</h3>
+  <mat-toolbar color="primary" class="mat-elevation-z4">
+    Customer Reviews
+  </mat-toolbar>
+  <div class="card-content">
+    <div *ngFor="let review of reviews" class="review">
+      <div class="customer-info">
+        <p class="customer-name">{{ review.customerName }}</p>
+        <p class="review-date">{{ review.date }}</p>
+      </div>
+      <p class="customer-feedback">{{ review.feedback }}</p>
     </div>
-
-    <form [formGroup]="angForm" (ngSubmit)="postData(angForm)" autocomplete="off">
-      <!-- Existing add reviews form code -->
-      <div class="row">
-        <div class="col-md-6">Service Name</div>
-        <div class="col-md-6">
-          <input
-            type="text"
-            name="name"
-            class="form-control"
-            formControlName="name"
-          />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">Service Price</div>
-        <div class="col-md-6">
-          <input
-            type="text"
-            name="price"
-            class="form-control"
-            formControlName="price"
-          />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">Service Description</div>
-        <div class="col-md-6">
-          <input
-            type="text"
-            name="description"
-            class="form-control"
-            formControlName="description"
-          />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <input type="submit" name="submit" class="btn btn-warning" />
-        </div>
-      </div>
-    </form>
   </div>
-
-  <!-- Horizontal Line -->
-  <div class="horizontal-line"></div>
-
-  <!-- List of past reviews below: -->
-  <div *ngIf="reviews.length > 0">
-    <h4>Past Reviews</h4>
-    <ul>
-      <li *ngFor="let review of reviews">
-        <strong>Customer Name:</strong> {{ review.name }} |
-        <strong>Service:</strong> {{ review.service }} |
-        <strong>Price:</strong> {{ review.price | currency: 'USD' }} |
-        <strong>Description:</strong> {{ review.description }}
-      </li>
-    </ul>
-  </div>
-
 </div>

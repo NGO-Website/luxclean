@@ -37,4 +37,17 @@
     background-color: #fff;
     color: #3498db;
   }
+
+  .quick-links li {
+    margin-bottom: 5px;
+  }
+  
+  .quick-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .quick-links a:hover {
+    text-decoration: underline;
+  }
   

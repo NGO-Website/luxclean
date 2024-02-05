@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+
+interface Review {
+  customerName: string;
+  date: string;
+  feedback: string
+}
 
 @Component({
   selector: 'app-reviews',
@@ -8,26 +12,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./reviews.component.scss'],
 })
 export class ReviewsComponent implements OnInit {
-  angForm: FormGroup;
 
-  reviews: any[] = [];
+  reviews: Review[] = [
+    {
+      customerName: 'Ashdon O',
+      date: 'March 2023',
+      feedback: 'Sarai was excellent! Very easy to communicate with, proficient, thorough, and a great energy to bring into your personal space. Definitely will be scheduling more appointments. My home smells and looks spotless.'
+    },
+    {
+      customerName: 'Alice Smith',
+      date: 'March 2023',
+      feedback: 'Great experience overall. Would definitely recommend to others.'
+    },
+    // Add more reviews as needed
+  ];
 
-  constructor(private fb: FormBuilder, private route: Router) {
-    this.angForm = this.fb.group({
-      name: ['', Validators.required],
-      service: ['', Validators.required],
-      price: ['', Validators.required],
-      description: ['', Validators.required],
-    });
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    this.reviews = [
-      {name: "Shubhranshu", service: "Apartment Cleaning Service", price: "50", description: "Good Service!!"}
-    ];
-  }
+  ngOnInit(): void {}
 
-  postData(forms: any) {
-    console.log(this.angForm.value);
+  getStars(rating: number): number[] {
+    return Array(Math.round(rating)).fill(0);
   }
 }

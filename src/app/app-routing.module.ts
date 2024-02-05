@@ -10,7 +10,6 @@ import { PlatinumComponent } from './components/service/platinum/platinum.compon
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'reviews', component: ReviewsComponent },
   { path: 'book-now', component: BookNowComponent },
   { path: 'service', component: ServiceComponent},
   { path: 'standard', component: StandardComponent},
