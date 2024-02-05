@@ -1,17 +1,30 @@
+.page-container {
+    margin: 0 auto;
+}
+
+.page-header {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #2c3e50;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
 .page-container h1 {
-    font-size: 32px; /* Adjusted font size */
-    color: #fff; /* Text color */
-    background-color: #3498db; /* Background color */
-    padding: 10px 20px; /* Added padding for better styling */
-    font-family: 'Song Myung'; /* Set Dancing Script as the font family */
+    font-size: 32px;
+    color: #fff;
+    background-color: #3498db;
+    padding: 10px 20px;
+    font-family: 'Song Myung';
     text-align: center;
     margin: 0;
-    display: inline-block; /* Make the background shape around the text */
-    border-radius: 40px; /* Added border-radius for rounded corners */
+    display: inline-block;
+    border-radius: 80px;
 }
 
 .page-container {
-    text-align: center; /* Center the entire container */
+    text-align: center;
 }
 
 .card {
@@ -35,7 +48,7 @@
 }
 
 .card-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 8px;
     text-align: left;
 }
@@ -44,6 +57,7 @@
     color: #555;
     margin-bottom: 16px;
     text-align: left;
+    font-size: 1.3rem;
 }
 
 .btn {
@@ -53,6 +67,7 @@
     border: none;
     border-radius: 80px;
     cursor: pointer;
+    font-size: 1.1rem;
 }
 
 .card-container {
@@ -62,26 +77,11 @@
 }
 
 .card-image:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s ease; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .button-container {
     display: flex;
-    gap: 8px; /* Adjust the spacing between buttons as needed */
+    gap: 8px;
 }
-
-.page-container {
-    margin: 0 auto;
-}
-
-.page-header {
-    font-size: 1.5rem;
-    margin-bottom: 16px;
-    margin-left: 20px;
-    margin-top: 20px;
-    color: #2c3e50; /* Text color */
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); /* Text shadow for a subtle effect */
-}
-
-
