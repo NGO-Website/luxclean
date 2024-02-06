@@ -1,5 +1,5 @@
 // book-now.component.ts
-
+import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -18,11 +18,10 @@ export class BookNowComponent implements OnInit {
     name: '',
     contactDetails: '',
     serviceType: [],
-    billingMethod: [] 
+    billingMethod: [],
+    parking_options: []
   };
 
-  serviceTypeOptions = ['Option 1', 'Option 2', 'Option 3'];
-  billingMethodOptions = ['Credit Card', 'PayPal', 'Bank Transfer'];
 
   ngOnInit(): void {
    
