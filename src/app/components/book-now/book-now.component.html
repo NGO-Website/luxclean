@@ -1,9 +1,12 @@
 <!-- booking-form.component.html -->
-
+<header style="position: relative;">
+  <img src="../../../assets/home-images/imagez.jpg" alt="" style="width: 100%; height: 300px;">
+  <h1 style="position: absolute; top: 61%; left: 20%; transform: translate(-50%, -50%); color: white; font-family: Helvetica, sans-serif; text-align: left">Book Now</h1>
+</header>
 <div class="container">
   <div class="card-container">
     <div class="card" >
-      <i class="fa-regular fa-clock" style="margin-top: 20px; text-align: center; color: #5bc2ce"></i>
+      <i class="fa-solid fa-clock" style="margin-top: 20px; text-align: center; color: #5bc2ce"></i>
         <h4 style="box-sizing: border-box;
         font-family: Helvetica, Sans-Serif;
         font-weight: bold;
@@ -96,7 +99,7 @@
     </div>
   </div>
     <form (ngSubmit)="onSubmit()" #bookNowForm="ngForm" class="form-container">
-      <h2 style="font-family: Helvetica, Sans-Serif; text-align: center; padding-bottom: 10px">Complete your Booking.</h2>
+      <h2 style="font-family: Helvetica, Sans-Serif; text-align: left; padding-bottom: 10px">Complete your Booking.</h2>
       <h6 style="font-weight: 100; font-family: proxima,arial;
       color: #373e4a;">Great! Few details and we can complete your booking. </h6>
     <hr>
