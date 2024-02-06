@@ -1,24 +1,19 @@
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<div class="container mt-4">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="areaFilter">Search by Area:</label>
-          </div>
-          <select class="custom-select" id="areaFilter" (change)="applyAreaFilter($event)">
-            <option value="all">All</option>
-            <option value="2500">Up to 2500 sq ft</option>
-            <option value="3500">Up to 3500 sq ft</option>
-            <option value="5000">Up to 5000 sq ft</option>
-            <option value="exclusive">Exclusive Services</option>
-          </select>
+<div class="container">
+    <div class="row justify-content-center"> <!-- Center the row -->
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="areaFilter">Search by Area:</label>
+                </div>
+                <select class="custom-select" id="areaFilter" (change)="applyAreaFilter($event)">
+                    <option value="all">All</option>
+                    <option value="2500">Up to 2500 sq ft</option>
+                    <option value="3500">Up to 3500 sq ft</option>
+                    <option value="5000">Up to 5000 sq ft</option>
+                    <option value="exclusive">Exclusive Services</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
 </div>
 <div class="page-container" *ngIf="selectedArea === '2500' || selectedArea === 'all'">
