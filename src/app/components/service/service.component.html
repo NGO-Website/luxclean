@@ -1,9 +1,13 @@
+<header style="position: relative;">
+    <img src="../../../assets/home-images/imagez.jpg" alt="" style="width: 100%; height: 300px;">
+    <h1 style="position: absolute; top: 61%; left: 20%; transform: translate(-50%, -50%); color: white; font-family: Helvetica, sans-serif; text-align: left">Services</h1>
+</header>
 <div class="container">
     <div class="row justify-content-center"> <!-- Center the row -->
         <div class="col-md-6 offset-md-3">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="areaFilter">Search by Area:</label>
+                    <label class="input-group-text" for="areaFilter" style="font-weight: 500;">Search by Area :</label>
                 </div>
                 <select class="custom-select" id="areaFilter" (change)="applyAreaFilter($event)">
                     <option value="all">All</option>

@@ -21,7 +21,8 @@
 }
 
 .page-container {
-    text-align: center;
+    text-align: left;
+    margin: 1.8%;
 }
 
 .card {
@@ -93,7 +94,7 @@
 }
 
 .card:hover {
-    border: 2px solid #3498db; /* Change border color to your desired highlight color */
+    border: 2px solid #FF2E63; 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
 }
 
@@ -108,17 +109,19 @@
 }
 
 .info-btn i {
-    font-size: 1.8rem; /* Adjust the font size as needed */
+    font-size: 1.8rem; 
 }
 
 .custom-select {
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 20px; 
+    font-weight: 500;
+    padding-left: 2%;
 }
 
 .input-group-text {
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 20px; 
 }
 
 .container {
-    padding-top: 5%; /* Adjust the top margin as needed */
+    padding-top: 2.5%;
 }
