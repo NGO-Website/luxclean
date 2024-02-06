@@ -5,10 +5,9 @@
 
 .page-title h1 {
     font-size: 64px; /* Adjusted font size */
-    color: #fff; /* Text color */
-    background-color: #3498db; /* Background color */
+    color: #120f0f;
     padding: 10px 20px; /* Added padding for better styling */
-    font-family: 'Dancing Script' /* Set Dancing Script as the font family */
+    font-family: 'Helvetica' /* Set Dancing Script as the font family */
 }
 
 .container {
@@ -40,6 +39,7 @@
 
 .text {
     width: auto; /* Set a fixed width for text container */
+    font-family: 'Helvetica';
 }
 
 .image-container {
@@ -65,6 +65,7 @@ p {
 .highlight {
     color: #000;
     font-weight: bold;
+    font-size: larger;
 }
 
 .sub-highlight {
