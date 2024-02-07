@@ -2,7 +2,7 @@
   background-image: url('/assets/home-images/wide-landing-2.jpeg');
   background-size: cover;
   background-position: center;
-  height: 580px; /* Adjust the height as needed */
+  height: 600px; /* Adjust the height as needed */
 }
 
 .landing-content {
@@ -37,3 +37,27 @@
   background-color: #F5F5F5; /* Change background color on hover */
   color: #FC5185;
 }
+
+// About Us: 
+
+.about-us-container {
+  background-color: #F5F5F5; /* Plain background color */
+  background-size: cover;
+  padding: 0 160px; /* Space on left and right */
+}
+
+.about-us-content {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.about-us-container h2 {
+  margin-bottom: 20px;
+  color: #364F6B; /* Heading color */
+}
+
+.about-us-container p {
+  color: #000; /* Paragraph color */
+  // margin-bottom: 20px; /* Add bottom margin for spacing between paragraphs */
+}
+
