@@ -76,6 +76,22 @@ button:disabled {
   display: flex;
 }
 
+
+.submit-button:disabled {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  margin-left: 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 #selected_time::after {
   content: '\25BC'; /* Unicode character for downward arrow */
   position: absolute;
