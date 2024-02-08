@@ -110,23 +110,18 @@
         color: #373e4a;">STEP 1: CHOOSE YOUR SERVICE</label>
             <span style="font-family: proxima,arial;
             color: #ababab; font-weight: 100; line-height: 1.42857143;">Tell us about your home.</span>
-            <select id="name" name="name" style="width: 100%;
-            padding: 5px;
-            color: #555; font-weight:200;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 5px;">
-              <option value="Standard" selected style="color: #555; font-weight:200; display: block;">Standard Cleaning Package</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Signature">Signature Cleaning Package</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Platinum">Platinum Cleaning Package</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Laundry">Laundry</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Fridge">Fridge Interior Clean</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Window">Window Sill Cleaning</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Pantry">Pantry Organization</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Closet">Closet Organization</option>
-              <option style="color: #555; font-weight:200; display: block;" value="Vents">Vents Cleaning</option>
-            </select>
+        <select id="name" name="name" style="width: 100%; padding: 5px; color: #555; font-weight: 400; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px;" [(ngModel)]="formData.selected_service" required>
+          <option value="" style="display: none;" disabled selected>Select a Service</option>
+          <option value="Standard Cleaning Package" (click)="selectService('Standard Cleaning Package')" [selected]="formData.selected_service === 'Standard Cleaning Package'">Standard Cleaning Package</option>
+          <option value="Signature Cleaning Package" (click)="selectService('Signature Cleaning Package')" [selected]="formData.selected_service === 'Signature Cleaning Package'">Signature Cleaning Package</option>
+          <option value="Platinum Cleaning Package" (click)="selectService('Platinum Cleaning Package')" [selected]="formData.selected_service === 'Platinum Cleaning Package'">Platinum Cleaning Package</option>
+          <option value="Laundry" (click)="selectService('Laundry')" [selected]="formData.selected_service === 'Laundry'">Laundry</option>
+          <option value="Fridge Interior Cleaning" (click)="selectService('Fridge Interior Cleaning')" [selected]="formData.selected_service === 'Fridge Interior Cleaning'">Fridge Interior Clean</option>
+          <option value="Window Sill Cleaning" (click)="selectService('Window Sill Cleaning')" [selected]="formData.selected_service === 'Window Sill Cleaning'">Window Sill Cleaning</option>
+          <option value="Pantry Organization" (click)="selectService('Pantry Organization')" [selected]="formData.selected_service === 'Pantry Organization'">Pantry Organization</option>
+          <option value="Closet Organization" (click)="selectService('Closet Organization')" [selected]="formData.selected_service === 'Closet Organization'">Closet Organization</option>
+          <option value="Vents Cleaning" (click)="selectService('Vents Cleaning')" [selected]="formData.selected_service === 'Vents Cleaning'">Vents Cleaning</option>
+        </select>        
       </div>
   
       <!-- Contact Details Input -->
