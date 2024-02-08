@@ -8,7 +8,7 @@
   background-color: #f5f5f5;
   border-radius: 10px;
   padding: 20px;
-  position: relative; /* Position for arrow buttons */
+  // position: relative; /* Position for arrow buttons */
 }
 
 .heading {
@@ -24,12 +24,17 @@
   overflow: hidden; /* Hide the overflow */
 }
 
+.reviews-container {
+  display: flex;
+  gap: 20px; /* Space between reviews */
+}
+
 .review {
-  flex: 0 0 calc(33.33% - 20px); /* Each review takes up one-third of the container width */
+  width: calc(100% / 3 - 20px); /* Adjusted width for 3 reviews per slide */
   background-color: #fff;
   border-radius: 10px;
   padding: 15px;
-  transition: transform 0.5s ease;
+  height: 380px;
 }
 
 .customer-name {
@@ -41,22 +46,18 @@
   color: #000;
 }
 
-.prev-btn,
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.carousel-control-prev-icon {
   background-color: #fc5185;
+  border-radius: 20px;
   color: #364f6b;
   font-size: 20px;
   cursor: pointer;
-  z-index: 1; /* Ensure buttons appear above reviews */
 }
 
-.prev-btn {
-  left: 20px; /* Adjust position */
-}
-
-.next-btn {
-  right: 20px; /* Adjust position */
+.carousel-control-next-icon {
+  background-color: #fc5185;
+  border-radius: 20px;
+  color: #364f6b;
+  font-size: 20px;
+  cursor: pointer;
 }

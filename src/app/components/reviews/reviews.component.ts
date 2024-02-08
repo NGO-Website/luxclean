@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Review {
   customerName: string;
@@ -12,6 +14,9 @@ interface Review {
   styleUrls: ['./reviews.component.scss'],
 })
 export class ReviewsComponent implements OnInit {
+
+  reviewsChunks: any[] = [];
+  currentIndex = 0;
 
   reviews: Review[] = [
     {
@@ -84,19 +89,23 @@ export class ReviewsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.chunkReviews();
+  }
 
-  scrollLeft(): void {
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-      carousel.scrollLeft -= carousel.offsetWidth; // Scroll one review to the left
+  chunkReviews() {
+    const chunkSize = 3; // Set chunk size to 3 for 3 reviews per slide
+    for (let i = 0; i < this.reviews.length; i++) {
+      this.reviewsChunks.push(this.reviews.slice(i, i + chunkSize));
     }
   }
 
-  scrollRight(): void {
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-      carousel.scrollLeft += carousel.offsetWidth; // Scroll one review to the right
+  shiftReviews(direction: string) {
+    const numChunks = this.reviewsChunks.length;
+    if (direction === 'left') {
+      this.currentIndex = (this.currentIndex - 1 + numChunks) % numChunks;
+    } else {
+      this.currentIndex = (this.currentIndex + 1) % numChunks;
     }
   }
 }
