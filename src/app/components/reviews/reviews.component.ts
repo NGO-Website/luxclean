@@ -86,7 +86,17 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getStars(rating: number): number[] {
-    return Array(Math.round(rating)).fill(0);
+  scrollLeft(): void {
+    const carousel = document.getElementById('carousel');
+    if (carousel) {
+      carousel.scrollLeft -= carousel.offsetWidth; // Scroll one review to the left
+    }
+  }
+
+  scrollRight(): void {
+    const carousel = document.getElementById('carousel');
+    if (carousel) {
+      carousel.scrollLeft += carousel.offsetWidth; // Scroll one review to the right
+    }
   }
 }

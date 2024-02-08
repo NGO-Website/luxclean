@@ -1,11 +1,13 @@
 <div class="container">
   <div class="customer-reviews">
     <h3 class="heading">Customer Reviews</h3>
-    <div class="carousel">
-        <div *ngFor="let review of reviews" class="review">
-            <p class="customer-name">{{ review.customerName }}</p>
-            <p class="customer-feedback">{{ review.feedback }}</p>
-        </div>
+    <div class="carousel" id="carousel">
+      <div *ngFor="let review of reviews" class="review" id="review">
+        <p class="customer-name">{{ review.customerName }}</p>
+        <p class="customer-feedback">{{ review.feedback }}</p>
+      </div>
     </div>
+    <button class="prev-btn" (click)="scrollLeft()">&#10094;</button>
+    <button class="next-btn" (click)="scrollRight()">&#10095;</button>
   </div>
 </div>
